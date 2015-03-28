@@ -52,6 +52,18 @@
     
   </head>
   <body>
+    <p id="p1">Hello World!</p>
     
+    <script>
+      function dbquery() {
+        var db = new Firebase("https://useyourworld.firebaseio.com/");
+        db.on("child_changed", function(snapshot) {
+          var change = snapshop.val();
+          console.log(change.users);
+          
+        });
+      }
+      document.getElementById("p1").innerHTML = "dbquery()";
+    </script>
   </body>
 </html>
