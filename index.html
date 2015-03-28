@@ -11,8 +11,45 @@
           "led" : "off"
         });
       }
+      function ledon() {
+        var db = new Firebase("https://useyourworld.firebaseio.com/");
+        
+        var userRef = db.child("users");
+        
+        userRef.update({
+          "led" : "on"
+        });
+      }
+      function servono() {
+        var db = new Firebase("https://useyourworld.firebaseio.com/");
+        
+        var userRef = db.child("users");
+        var servoRef = userRef.child("servo");
+        
+        
+        servoRef.update({
+          "open" : "no"
+        });
+      }
+      function servoyes() {
+        var db = new Firebase("https://useyourworld.firebaseio.com/");
+        
+        var userRef = db.child("users");
+        var servoRef = userRef.child("servo");
+        
+        
+        servoRef.update({
+          "open" : "yes"
+        });
+      }
+      
     </script>
     <button onclick="ledoff()">LED Off</button>
+    <button onclick="ledon()">LED On</button>
+    <button onclick="servono()">Servo No</button>
+    <button onclick="servoyes()">Servo Yes</button>
+    
+    
   </head>
   <body>
     
