@@ -58,7 +58,7 @@
       function dbquery() {
         var db = new Firebase("https://useyourworld.firebaseio.com/");
         db.on("child_changed", function(snapshot) {
-          var change = snapshop.val();
+          var change = snapshot.val();
           console.log(change.users);
           
         });
