@@ -60,11 +60,10 @@
         var userRef = db.child("users");
         userRef.on("child_changed", function(snapshot) {
           var change = snapshot.val();
-          console.log(change.led);
+          document.write(change.led);
           
         });
       }
-      document.getElementById("p1").innerHTML = dbquery();
     </script>
   </body>
 </html>
